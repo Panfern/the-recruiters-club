@@ -1,0 +1,123 @@
+🚨 Objective:
+
+Create a simple, lightweight HR company website using free-tier tools. The site should consist of static pages, two dynamic pages (for job listings and application submission), and an admin dashboard for managing job posts and applications. The project must be suitable for deployment on free platforms like Vercel, Netlify, Render, Firebase, or Replit.
+
+📦 Project Requirements:
+
+1. Static Pages (Frontend)
+Develop using HTML, Tailwind CSS (or plain CSS if simpler), and vanilla JavaScript.
+
+/index.html – Home page describing the HR company
+
+/about.html – About the company
+
+/contact.html – Contact details or form (form not functional is okay)
+
+Use simple styling, fast-loading, responsive layout
+
+2. Dynamic Pages (Frontend + Backend Integration)
+
+✅ Job Listings Page (/jobs.html):
+
+Fetch job postings from backend API
+
+Display job title, description, location, type
+
+Each job has an "Apply" button that links to application form with job pre-selected
+
+✅ Job Application Page (/apply.html?jobId=xyz):
+
+Form fields: Name, Email, Phone, Resume (file upload optional), Cover Letter
+
+Submits data to backend API POST /api/apply
+
+Minimal validation, show success/error messages
+
+3. Admin Panel (/admin.html)
+
+Simple interface for admin
+
+Functionalities:
+
+Add Job Posting – Title, Description, Location, Type → POST /api/jobs
+
+View Applications – Call GET /api/applications and list them
+
+Authentication optional (if included, use Firebase Auth or a password prompt)
+
+🧠 Backend (Node.js + Express)
+
+Set up a lightweight Express server with the following RESTful API routes:
+
+GET /api/jobs – Return all job postings
+
+POST /api/jobs – Accepts job details and stores them
+
+POST /api/apply – Accepts job application form and stores it
+
+GET /api/applications – Returns all submitted applications
+
+Data Storage Options (choose one):
+
+JSON flat-file database (e.g., jobs.json, applications.json) for simplicity
+
+OR Firebase Firestore for structured and scalable free database
+
+🛠️ Project Structure (Suggestion)
+
+pgsql
+Copy
+Edit
+hr-website/
+├── frontend/
+│   ├── index.html
+│   ├── about.html
+│   ├── contact.html
+│   ├── jobs.html
+│   ├── apply.html
+│   └── admin.html
+└── backend/
+    ├── server.js
+    ├── routes/
+    │   ├── jobs.js
+    │   └── applications.js
+    └── data/
+        ├── jobs.json
+        └── applications.json
+🌐 Hosting Instructions:
+
+Frontend: Host on Vercel or Netlify using GitHub repo connection
+
+Backend: Host Node.js API on Render (Free tier) or Replit
+
+Database:
+
+If using Firebase: Set up Firestore and Authentication (optional)
+
+If using flat-file: Ensure backend has write permissions (e.g., on Replit)
+
+🔐 Bonus (Optional Enhancements):
+
+Add Google reCAPTCHA on application form
+
+Add Firebase Auth or simple password check for admin access
+
+Email notification via EmailJS/Formspree for new applications
+
+📝 Delivery Format:
+
+GitHub-ready project with:
+
+frontend/ and backend/ folders
+
+README with setup and deployment instructions
+
+Include sample dummy data (e.g., 2 job postings, 1 application)
+
+🧑‍💻 Your role as the AI agent:
+
+Generate all code, assets, and config files needed
+
+Provide a zipped download or GitHub link
+
+Make the code modular and readable
