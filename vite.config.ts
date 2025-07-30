@@ -37,4 +37,10 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
+  define: {
+    global: 'globalThis',
+  },
+  optimizeDeps: {
+    exclude: ['@neondatabase/serverless']
+  }
 });
